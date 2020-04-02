@@ -3,7 +3,7 @@
 This assumes that the data is in [Zenodo](www.zenodo.org).
 It should work also for other sources, but has not been tested.
 
-1. Collect the information in the first cell of the [Jyputer notebook (AddData.ipynb)](https://github.com/NMRLipids/NMRlipidsVIpolarizableFFs/blob/master/DataContribtionScripts/AddData.ipynb).
+1. Collect the information for the first cell of the [Jyputer notebook (AddData.ipynb)](https://github.com/NMRLipids/NMRlipidsVIpolarizableFFs/blob/master/DataContribtionScripts/AddData.ipynb).
 The required information is marked with bold here:
 
 >DOI="**Give the DOI here**" \
@@ -14,7 +14,7 @@ The required information is marked with bold here:
 > \
 >#NMRLIPIDS BEGIN \
 >@SIM \
->@SOFTWARE=**Give the name of used simulation program here, e.g., Gromacs, NAMD, etc.** \
+>@SOFTWARE=**Give the name of used simulation program here, e.g., gromacs, namd, etc.** \
 >@FF=**Give the name of the force field, e.g., CHARMM36** \
 >@FF_SOURCE=**Give the source of the force field, e.g., CHARMM-GUI** \
 >@FF_DATE=**Give the date of the force field, e.g., when downloaded from CHARMM-GUI** \
