@@ -41,3 +41,4 @@ Results will be written in the [Data/Simulations/**DOI**.X](https://github.com/N
 folder.
 6. Commit the files *OrderParametersX.dat* in the *Data/Simulations/**DOI**.X* directory to your fork
 and make pull request to the master branch in the NMRlipids project.
+**Do not commit the trajectories to git. This will cause problems because git cannot handle large files.**
