@@ -1,26 +1,38 @@
-# Instructions to contribute data which is publicly available under DOI
-This is build assuming that the data is in Zenodo.
-Ideally this should work also for other potential sources, but it has not been tested.
+# Instructions to contribute data publicly available under DOI
 
-1. Fill the information in the first cell of the available [Jyputer notebook](https://github.com/NMRLipids/NMRlipidsVIpolarizableFFs/blob/master/scripts/AddData.ipynb):
+This assumes that the data is in [Zenodo](www.zenodo.org).
+It should work also for other sources, but has not been tested.
+
+1. Collect the information in the first cell of the [Jyputer notebook](https://github.com/NMRLipids/NMRlipidsVIpolarizableFFs/blob/master/DataContribtionScripts/AddData.ipynb):
 
 >DOI="**Give the DOI here**"
+
 >def_file  = "**Give the *def file used to calculate order parameters here**"
->
+
 >user_information = """
+
 >DOPE test
+
 >#NMRLIPIDS BEGIN
->
+
 >@SIM
+
 >@SOFTWARE=**Give the name of used simulation program here, e.g., Gromacs, NAMD, etc.**
+
 >@FF=**Give the name of the force field, e.g., CHARMM36**
+
 >@FF_SOURCE=**Give the source of the force field, e.g., CHARMM-GUI**
+
 >@FF_DATE=**Give the date of the force field, e.g., when downloaded from CHARMM-GUI**
+
 >@TRJ=**Give the name of the trajectory in the Zenodo repository, e.g., trr or xtc file in Gromacs**
+
 >@TPR=**Give the name of the structure file in the Zenodo repository, e.g., tpr in Gromacs**
+
 >#
+
 >#NMRLIPIDS END
->
+
 >"""
 
 Example can be found from [here]().
