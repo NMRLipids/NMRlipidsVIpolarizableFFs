@@ -6,11 +6,11 @@ It should work also for other sources, but has not been tested.
 1. Collect the information in the first cell of the [Jyputer notebook](https://github.com/NMRLipids/NMRlipidsVIpolarizableFFs/blob/master/DataContribtionScripts/AddData.ipynb):
 
 >DOI="**Give the DOI here**" \
->def_file  = "**Give the *def file used to calculate order parameters here**" \
-
+>def_file  = "**Give the definition file used to calculate order parameters here**" \
+> \
 >user_information = """ \
 >DOPE test \
-
+> \
 >#NMRLIPIDS BEGIN \
 >@SIM \
 >@SOFTWARE=**Give the name of used simulation program here, e.g., Gromacs, NAMD, etc.** \
@@ -19,11 +19,8 @@ It should work also for other sources, but has not been tested.
 >@FF_DATE=**Give the date of the force field, e.g., when downloaded from CHARMM-GUI** \
 >@TRJ=**Give the name of the trajectory in the Zenodo repository, e.g., trr or xtc file in Gromacs** \
 >@TPR=**Give the name of the structure file in the Zenodo repository, e.g., tpr in Gromacs** \
->#
-
+> \
 >#NMRLIPIDS END
-
->"""
 
 Example can be found from [here]().
 
