@@ -3,13 +3,14 @@
 This assumes that the data is in [Zenodo](www.zenodo.org).
 It should work also for other sources, but has not been tested.
 
-1. Collect the information in the first cell of the [Jyputer notebook](https://github.com/NMRLipids/NMRlipidsVIpolarizableFFs/blob/master/DataContribtionScripts/AddData.ipynb):
+1. Collect the information in the first cell of the [Jyputer notebook (AddData.ipynb)](https://github.com/NMRLipids/NMRlipidsVIpolarizableFFs/blob/master/DataContribtionScripts/AddData.ipynb).
+The required information is marked with bold here:
 
 >DOI="**Give the DOI here**" \
 >def_file  = "**Give the definition file used to calculate order parameters here**" \
 > \
 >user_information = """ \
->DOPE test \
+>**Give free text information about your system, e.g., POPC lipid bilayer** \
 > \
 >#NMRLIPIDS BEGIN \
 >@SIM \
@@ -22,17 +23,21 @@ It should work also for other sources, but has not been tested.
 > \
 >#NMRLIPIDS END
 
-Example can be found from [here]().
+Example can be found from [here](https://github.com/NMRLipids/NMRlipidsVIpolarizableFFs/blob/master/DataContribtionScripts/exampleDATAnamdPOPC.txt). 
+Note that if you have several trajectories under the same DOI, you can put them in the same file 
+as shown in [this example]().
 
-2. Deliver this information to us by commenting the blog or some other way,
+2. Deliver this information to us, for example, by commenting [the blog](),
 or if you want to analyze yourself go to step 3.
 
 ## Running analysis for the data
 
-3. Fork this GitHub repository to your own GitHub account and local computer.
+3. Fork this [GitHub repository](https://github.com/NMRLipids/NMRlipidsVIpolarizableFFs) to your own GitHub account and local computer.
 4. Copy the information made in step 1 into the first shell of
-the [Jyputer notebook](https://github.com/NMRLipids/NMRlipidsVIpolarizableFFs/blob/master/scripts/AddData.ipynb),
+the [Jyputer notebook](https://github.com/NMRLipids/NMRlipidsVIpolarizableFFs/blob/master/DataContribtionScripts/AddData.ipynb),
 and define working directory at your local computer in the second cell.
-5. Run the AddData.ipynb notebook to calculate the order parameters.
-6. Push the directory (which should have name like ”10.5281:zenodo.3557459.0”) in the NMR-
-lipidsVIpolarizableFFs/Data/Simulations directory to GitHub and make pull request to the master branch in the NMRlipids project.
+5. Run the Jupyter notebook to calculate the order parameters. 
+Results will be written in the [Data/Simulations/**DOI**.X](https://github.com/NMRLipids/NMRlipidsVIpolarizableFFs/tree/master/Data/Simulations)
+folder.
+6. Commit the files *OrderParametersX.dat* in the *Data/Simulations/**DOI**.X* directory to your fork
+and make pull request to the master branch in the NMRlipids project.
