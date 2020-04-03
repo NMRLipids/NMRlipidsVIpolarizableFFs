@@ -1,0 +1,1 @@
+{'ID': 0, 'FF': 'CHARMM36', 'FF_DATE': '??', 'FF_SOURCE': 'CHARMM-GUI', 'SOFTWARE': 'gromacs', 'TPR': [['POPE_C36_310K.tpr']], 'TRJ': [['POPE_C36_310K.xtc']]}
