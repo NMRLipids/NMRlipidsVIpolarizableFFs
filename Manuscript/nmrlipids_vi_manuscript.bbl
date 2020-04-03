@@ -1,0 +1,199 @@
+\providecommand{\latin}[1]{#1}
+\makeatletter
+\providecommand{\doi}
+  {\begingroup\let\do\@makeother\dospecials
+  \catcode`\{=1 \catcode`\}=2 \doi@aux}
+\providecommand{\doi@aux}[1]{\endgroup\texttt{#1}}
+\makeatother
+\providecommand*\mcitethebibliography{\thebibliography}
+\csname @ifundefined\endcsname{endmcitethebibliography}
+  {\let\endmcitethebibliography\endthebibliography}{}
+\begin{mcitethebibliography}{19}
+\providecommand*\natexlab[1]{#1}
+\providecommand*\mciteSetBstSublistMode[1]{}
+\providecommand*\mciteSetBstMaxWidthForm[2]{}
+\providecommand*\mciteBstWouldAddEndPuncttrue
+  {\def\EndOfBibitem{\unskip.}}
+\providecommand*\mciteBstWouldAddEndPunctfalse
+  {\let\EndOfBibitem\relax}
+\providecommand*\mciteSetBstMidEndSepPunct[3]{}
+\providecommand*\mciteSetBstSublistLabelBeginEnd[3]{}
+\providecommand*\EndOfBibitem{}
+\mciteSetBstSublistMode{f}
+\mciteSetBstMaxWidthForm{subitem}{(\alph{mcitesubitemcount})}
+\mciteSetBstSublistLabelBeginEnd
+  {\mcitemaxwidthsubitemform\space}
+  {\relax}
+  {\relax}
+
+\bibitem[Melcr \latin{et~al.}(2019)Melcr, Ferreira, Jungwirth, and
+  Ollila]{melcr2019improved}
+Melcr,~J.; Ferreira,~T.~M.; Jungwirth,~P.; Ollila,~O.~S. Improved Cation
+  Binding to Lipid Bilayers with Negatively Charged POPS by Effective Inclusion
+  of Electronic Polarization. \emph{Journal of chemical theory and computation}
+  \textbf{2019}, \relax
+\mciteBstWouldAddEndPunctfalse
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Li \latin{et~al.}(2017)Li, Chowdhary, Huang, He, MacKerell~Jr, and
+  Roux]{li2017drude}
+Li,~H.; Chowdhary,~J.; Huang,~L.; He,~X.; MacKerell~Jr,~A.~D.; Roux,~B. Drude
+  polarizable force field for molecular dynamics simulations of saturated and
+  unsaturated zwitterionic lipids. \emph{Journal of chemical theory and
+  computation} \textbf{2017}, \emph{13}, 4535--4552\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Chu \latin{et~al.}(2018)Chu, Peng, Li, Zhang, and
+  Li]{chu2018anionicpolarizable}
+Chu,~H.; Peng,~X.; Li,~Y.; Zhang,~Y.; Li,~G. A polarizable atomic
+  multipole-based force field for molecular dynamics simulations of anionic
+  lipids. \emph{Molecules} \textbf{2018}, \emph{23}, 77\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Chu \latin{et~al.}(2018)Chu, Peng, Li, Zhang, Min, and
+  Li]{chu2018polarizable}
+Chu,~H.; Peng,~X.; Li,~Y.; Zhang,~Y.; Min,~H.; Li,~G. Polarizable atomic
+  multipole-based force field for DOPC and POPE membrane lipids.
+  \emph{Molecular Physics} \textbf{2018}, \emph{116}, 1037--1050\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Lucas \latin{et~al.}(2012)Lucas, Bauer, and Patel]{lucas2012charge}
+Lucas,~T.~R.; Bauer,~B.~A.; Patel,~S. Charge equilibration force fields for
+  molecular dynamics simulations of lipids, bilayers, and integral membrane
+  protein systems. \emph{Biochimica et Biophysica Acta (BBA)-Biomembranes}
+  \textbf{2012}, \emph{1818}, 318--329\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Klauda \latin{et~al.}(2010)Klauda, Venable, Freites, O’Connor,
+  Tobias, Mondragon-Ramirez, Vorobyov, MacKerell~Jr, and
+  Pastor]{klauda2010update}
+Klauda,~J.~B.; Venable,~R.~M.; Freites,~J.~A.; O’Connor,~J.~W.;
+  Tobias,~D.~J.; Mondragon-Ramirez,~C.; Vorobyov,~I.; MacKerell~Jr,~A.~D.;
+  Pastor,~R.~W. Update of the CHARMM all-atom additive force field for lipids:
+  validation on six lipid types. \emph{The journal of physical chemistry B}
+  \textbf{2010}, \emph{114}, 7830--7843\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Seelig and Seelig(1974)Seelig, and Seelig]{seelig1974dynamic}
+Seelig,~A.; Seelig,~J. Dynamic structure of fatty acyl chains in a phospholipid
+  bilayer measured by deuterium magnetic resonance. \emph{Biochemistry}
+  \textbf{1974}, \emph{13}, 4839--4845\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Seelig and Seelig(1975)Seelig, and Seelig]{seelig1975bilayers}
+Seelig,~A.; Seelig,~J. Bilayers of dipalmitoyl-3-sn-phosphatidylcholine:
+  Conformational differences between the fatty acyl chains. \emph{Biochimica et
+  Biophysica Acta (BBA)-Biomembranes} \textbf{1975}, \emph{406}, 1--5\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Gally \latin{et~al.}(1975)Gally, Niederberger, and
+  Seelig]{gally1975conformation}
+Gally,~H.~U.; Niederberger,~W.; Seelig,~J. Conformation and motion of the
+  choline head group in bilayers of dipalmitoyl-3-sn-phosphatidylcholine.
+  \emph{Biochemistry} \textbf{1975}, \emph{14}, 3647--3652\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Gally \latin{et~al.}(1981)Gally, Pluschke, Overath, and
+  Seelig]{gally1981structure}
+Gally,~H.~U.; Pluschke,~G.; Overath,~P.; Seelig,~J. Structure of Escherichia
+  coli membranes. Glycerol auxotrophs as a tool for the analysis of the
+  phospholipid head-group region by deuterium magnetic resonance.
+  \emph{Biochemistry} \textbf{1981}, \emph{20}, 1826--1831\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Strenk \latin{et~al.}(1985)Strenk, Westerman, and
+  Doane]{strenk1985model}
+Strenk,~L.; Westerman,~P.; Doane,~J. A model of orientational ordering in
+  phosphatidylcholine bilayers based on conformational analysis of the glycerol
+  backbone region. \emph{Biophysical journal} \textbf{1985}, \emph{48},
+  765--773\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Douliez \latin{et~al.}(1995)Douliez, Leonard, and
+  Dufourc]{douliez1995restatement}
+Douliez,~J.-P.; Leonard,~A.; Dufourc,~E.~J. Restatement of order parameters in
+  biomembranes: calculation of CC bond order parameters from CD quadrupolar
+  splittings. \emph{Biophysical journal} \textbf{1995}, \emph{68},
+  1727--1739\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Shaikh \latin{et~al.}(2002)Shaikh, Brzustowicz, Gustafson, Stillwell,
+  and Wassall]{shaikh2002monounsaturated}
+Shaikh,~S.~R.; Brzustowicz,~M.~R.; Gustafson,~N.; Stillwell,~W.; Wassall,~S.~R.
+  Monounsaturated PE does not phase-separate from the lipid raft molecules
+  sphingomyelin and cholesterol: role for polyunsaturation? \emph{Biochemistry}
+  \textbf{2002}, \emph{41}, 10593--10602\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Perly \latin{et~al.}(1985)Perly, Smith, and Jarrell]{perly1985acyl}
+Perly,~B.; Smith,~I.~C.; Jarrell,~H.~C. Acyl chain dynamics of
+  phosphatidylethanolamines containing oleic acid and dihydrosterculic acid:
+  deuteron NMR relaxation studies. \emph{Biochemistry} \textbf{1985},
+  \emph{24}, 4659--4665\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Seelig and Waespe-Sarcevic(1978)Seelig, and
+  Waespe-Sarcevic]{seelig1978molecular}
+Seelig,~J.; Waespe-Sarcevic,~N. Molecular order in cis and trans unsaturated
+  phospholipid bilayers. \emph{Biochemistry} \textbf{1978}, \emph{17},
+  3310--3315\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Davis \latin{et~al.}(2009)Davis, Rahaman, and
+  Patel]{davis2009molecular}
+Davis,~J.~E.; Rahaman,~O.; Patel,~S. Molecular dynamics simulations of a DMPC
+  bilayer using nonadditive interaction models. \emph{Biophysical journal}
+  \textbf{2009}, \emph{96}, 385--402\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Davis and Patel(2009)Davis, and Patel]{davis2009charge}
+Davis,~J.~E.; Patel,~S. Charge equilibration force fields for lipid
+  environments: applications to fully hydrated DPPC bilayers and DMPC-embedded
+  gramicidin A. \emph{The Journal of Physical Chemistry B} \textbf{2009},
+  \emph{113}, 9183--9196\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Klauda \latin{et~al.}(2005)Klauda, Brooks, MacKerell, Venable, and
+  Pastor]{klauda2005ab}
+Klauda,~J.~B.; Brooks,~B.~R.; MacKerell,~A.~D.; Venable,~R.~M.; Pastor,~R.~W.
+  An ab initio study on the torsional surface of alkanes and its effect on
+  molecular simulations of alkanes and a DPPC bilayer. \emph{The journal of
+  physical chemistry B} \textbf{2005}, \emph{109}, 5300--5311\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\end{mcitethebibliography}
