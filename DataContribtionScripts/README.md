@@ -25,7 +25,7 @@ The required information is marked with bold here:
 
 Example can be found from [here](https://github.com/NMRLipids/NMRlipidsVIpolarizableFFs/blob/master/DataContribtionScripts/exampleDATAnamdPOPC.txt). 
 Note that if you have several trajectories under the same DOI, you can put them in the same file 
-as shown in [this example]().
+as shown in [this example](https://github.com/NMRLipids/NMRlipidsVIpolarizableFFs/blob/master/DataContribtionScripts/exampleDATAmultipleTRAJS.txt).
 
 2. Deliver this information to us, for example, by commenting [the blog]().
 If you want to analyze the data yourself go to step 3.
