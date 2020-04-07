@@ -42,3 +42,5 @@ folder, where X refers to the number of simulation in the DOI.
 6. Commit the files *OrderParametersX.dat* in the *Data/Simulations/**DOI**.X* directory to your fork
 and make a pull request to the [master branch in the NMRlipids project](https://github.com/NMRLipids/NMRlipidsVIpolarizableFFs).
 **Do not commit the trajectories to git. This will cause problems because git cannot handle large files.**
+
+The [Jupyter notebook](https://github.com/NMRLipids/NMRlipidsVIpolarizableFFs/blob/master/DataContribtionScripts/AddData.ipynb) is originally written by Hector Martinez-Seara based on discussions in the [first annual NMRlipids workshop](https://nmrlipids.blogspot.com/2019/05/the-first-annual-nmrlipids-workshop.html), and then further developed by Hanne Antila, Batuhan Kav, and Samuli Ollila before it was committed into this GitHub repository.
