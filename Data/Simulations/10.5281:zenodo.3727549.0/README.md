@@ -1,0 +1,1 @@
+{'SOFTWARE': 'namd', 'TRJ': [['traj.dcd']], 'PDB': [['traj.pdb']], 'ID': 0, 'FF_SOURCE': 'CHARMM-GUI', 'FF': 'CHARMM36'}
