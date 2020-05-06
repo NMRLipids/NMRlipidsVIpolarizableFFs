@@ -8,38 +8,34 @@
 # In[1]:
 
 
-DOI="10.5281/zenodo.2641987"
-def_file  = "/home/samuli/work/NMRlipids/MATCH/scripts/orderParm_defs/order_parameter_definitions_MODEL_CHARMM36_POPE.def"
+DOI="10.5281/zenodo.1011096"
+def_file  = "/home/samuli/work/NMRlipids/MATCH/scripts/orderParm_defs/order_parameter_definitions_MODEL_CHARMM36_POPG.def"
 
 user_information = """
-DOPE test
+POPC multiple trajectories test
 #NMRLIPIDS BEGIN
 
 @SIM
+@SYSTEM=POPG_T298K
 @SOFTWARE=gromacs
 @FF=CHARMM36
 @FF_SOURCE=CHARMM-GUI
 @FF_DATE=??
-@TRJ=POPE_C36_310K.xtc
-@TPR=POPE_C36_310K.tpr
+@TRJ=run2.xtc
+@TPR=run2.tpr
 
 #NMRLIPIDS END
 
 """
 
 
-# ## Working directory
-
-# In[2]:
-
-
 # Working directory
-dir_wrk  = "/home/samuli/work/temp/DATAbankTST/"
+dir_wrk  = "/home/samuli/work/temp/DATAbankTST/POPCcharmm/"
 
 
 # ## General Imports
 
-# In[3]:
+# In[2]:
 
 
 # Working with files and directories
@@ -68,7 +64,7 @@ from copy import deepcopy
 
 # ## Directories
 
-# In[4]:
+# In[3]:
 
 
 dir_wrk = os.path.normpath(dir_wrk)
@@ -79,7 +75,7 @@ print(def_file)
 
 # ## Check that the DOI link is valid
 
-# In[5]:
+# In[4]:
 
 
 DOI_url = 'https://doi.org/' + DOI
@@ -106,7 +102,7 @@ else:
 
 # ## Read input description
 
-# In[6]:
+# In[5]:
 
 
 bNMRLIPIDS = False #Check if the link contains NMRLIPIDS metadata
@@ -126,6 +122,7 @@ for line in user_information.split("\n"):
         #sims.append({"ID" : nsims, "STATUS" : 0})
         sims.append({"ID" : nsims})
         nsims += 1
+        sims[-1]["DOI"] = DOI
         continue
     if not bNMRLIPIDS:
         continue
@@ -137,11 +134,9 @@ print(sims)
         
 
 
-# 
-
 # ### Dictionares
 
-# In[7]:
+# In[6]:
 
 
 # Gromacs
@@ -182,6 +177,12 @@ gromacs_dict = {
                               },
                'FF_DATE' : {"REQUIRED": False,
                             "TYPE" : "date",
+                           },
+               'DOI' : {"REQUIRED": True,
+                            "TYPE" : "string",
+                           },
+               'SYSTEM' : {"REQUIRED": True,
+                            "TYPE" : "string",
                            },
                }
 
@@ -241,7 +242,7 @@ print(software_dict.keys())
 
 # ### Check software used by the simulation
 
-# In[8]:
+# In[7]:
 
 
 sims_valid_software = []
@@ -258,7 +259,7 @@ for sim in sims:
 
 # ### Check that all entry keys provided for each simulation are valid:
 
-# In[9]:
+# In[8]:
 
 
 sims_valid_entries = []
@@ -285,7 +286,7 @@ for sim in sims_valid_software:
 
 # ### Process entries with files information to contain file names in arrays
 
-# In[10]:
+# In[9]:
 
 
 sims_files_to_array = deepcopy(sims_valid_entries)
@@ -312,7 +313,7 @@ for sim in sims_files_to_array:
 
 # ### Check for multiple files in entries that can only contain one
 
-# In[11]:
+# In[10]:
 
 
 sims_valid_file_entries = []
@@ -337,7 +338,7 @@ for sim in sims_files_to_array:
 
 # ### Check if the submitted simulation has rssion has all required files and information
 
-# In[12]:
+# In[11]:
 
 
 sims_required_entries = []
@@ -361,7 +362,7 @@ for sim in sims_valid_file_entries:
 
 # ### Check status links
 
-# In[13]:
+# In[12]:
 
 
 # Download link
@@ -375,7 +376,7 @@ def download_link(doi, file):
         return ""
 
 
-# In[14]:
+# In[13]:
 
 
 #print(sims_required_entries)
@@ -456,7 +457,7 @@ for sim in sims_working_links:
 
 # ## Calculate hash downloaded files
 
-# In[16]:
+# In[14]:
 
 
 dir_tmp = os.path.join(dir_wrk, "tmp/")
@@ -509,7 +510,7 @@ for sim in sims_hashes:
 print(sims_hashes)
 
 
-# In[17]:
+# In[15]:
 
 
 str(sims_working_links)
@@ -517,7 +518,7 @@ str(sims_working_links)
 
 # # Save to databank
 
-# In[18]:
+# In[16]:
 
 
 data_directory = {}
@@ -550,13 +551,13 @@ for sim in sims_working_links:
 # # Analysis starts here
 # 
 
-# In[19]:
+# In[17]:
 
 
 ## First dowload packages and calculate the correlation functions using gromacs tools
 
 
-# In[21]:
+# In[18]:
 
 
 from OrderParameter import *
@@ -564,6 +565,7 @@ import warnings
 #from corrtimes import *
 import subprocess
 import mdtraj
+import json
 #!cp corr_ftios_ind.sh {dir_wrk}
 for sim in sims_working_links:
     trj=sim.get('TRJ')
@@ -606,24 +608,25 @@ for sim in sims_working_links:
        
     print("Calculating order parameters")
     OrdParam=find_OP(def_file,tpr,xtcwhole)
-    outfile=open(str(dir_wrk)+'/tmp/'+str(ID)+'/'+'OrderParameters'+str(ID)+'.dat','w')
+    outfile=open(str(dir_wrk)+'/tmp/'+str(ID)+'/'+'OrderParameters.dat','w')
     line1="Atom     Average OP     OP stem"+'\n'
     outfile.write(line1)
+    
+    data = {}
+    outfile2=str(dir_wrk)+'/tmp/'+str(ID)+'/'+'OrderParameters.json'
     
     for i,op in enumerate(OrdParam.values()):
         resops =op.get_op_res
         (op.avg, op.std, op.stem) =op.get_avg_std_stem_OP
-        
         line2=str(op.name)+" "+str(op.avg)+" "+str(op.stem)+'\n'
         outfile.write(line2)
+        
+        data[str(op.name)]=[]
+        data[str(op.name)].append(op.get_avg_std_stem_OP)
+        with open(outfile2, 'w') as f:
+            json.dump(data,f)
 
-    get_ipython().system("cp {str(dir_wrk)}'/tmp/'{str(ID)}'/OrderParameters'{str(ID)}'.dat' {data_directory.get(str(ID))}")
     outfile.close()
-    
-
-
-# In[ ]:
-
-
-
+    get_ipython().system("cp {str(dir_wrk)}'/tmp/'{str(ID)}'/OrderParameters.dat' {data_directory.get(str(ID))}    ")
+    get_ipython().system("cp {str(dir_wrk)}'/tmp/'{str(ID)}'/OrderParameters.json' {data_directory.get(str(ID))}    ")
 
