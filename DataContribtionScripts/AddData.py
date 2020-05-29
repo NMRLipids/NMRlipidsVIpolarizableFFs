@@ -226,7 +226,31 @@ namd_dict = {
 charmm_dict = {}
 
 # OPENMM
-openmm_dict = {}
+openmm_dict = {            
+            'TRJ' : { "REQUIRED": True,
+                      "TYPE": "files",
+                      "EXTENSION": ("dcd"),
+                    },
+            'INP' : { "REQUIRED": False,
+                      "TYPE": "file",
+                      "EXTENSION": (".inp"),
+                    },
+            'FF'  :  { "REQUIRED": False,
+                      "TYPE" : "string",
+                    },
+            'FF_SOURCE' : {"REQUIRED": False,
+                           "TYPE" : "string",
+                              },
+            'FF_DATE' : {"REQUIRED": False,
+                         "TYPE" : "date",
+                        },
+            'PDB'  : { "REQUIRED": True,
+                    "TYPE": "file",
+                    "EXTENSION": "pdb",}
+             'PY'  : { "REQUIRED:" False,
+                     "TYPE" : "file",
+                     "EXTENSION": "py"} # input py file
+               }
 
 # SOFTWARE
 software_dict = {
