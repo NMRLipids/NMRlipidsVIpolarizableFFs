@@ -1,3 +1,6 @@
 An initial Drude simulation of POPC membrane with OpenMM.
 
-The zenodo links will be added soon.
+
+https://doi.org/10.5281/zenodo.3865283
+
+
