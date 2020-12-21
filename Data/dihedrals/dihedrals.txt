@@ -1,0 +1,1 @@
+Dihedral distributions are calculated via https://github.com/batukav/NMRlipidsVIpolarizableFFs/blob/master/scripts/calcDihedral.py
