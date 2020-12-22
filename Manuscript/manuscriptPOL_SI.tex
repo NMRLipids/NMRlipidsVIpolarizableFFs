@@ -83,7 +83,7 @@
 %\title[An \textsf{achemso} demo]
 %  {A demonstration of the \textsf{achemso} \LaTeX\
 %   class\footnote{A footnote for the title}}
-\title{NMRLipids VI: Polarizable Force Fields}
+\title{Supplementary Information for the  \\ NMRLipids VI: Polarizable Force Fields}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Some journals require a list of abbreviations or keywords to be
@@ -124,81 +124,20 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
 
-\section{Methods}
-
-This project is performed using the "NMRLipids Databank" format and all related files, except the trajectories, are available under\\ "https://github.com/batukav/NMRlipidsVIpolarizableFFs/"
-Order parameters are calculated using the script "OrderParameters.py" under\\ "https://github.com/batukav/NMRlipidsVIpolarizableFFs/tree/master/scripts". \\
-Dihedral distributions are calculated using the script "calcDihedral.py" under\\ "https://github.com/batukav/NMRlipidsVIpolarizableFFs/tree/master/scripts" .\\
-
-
-\subsection{Simulation Details}
-
-% Please add the following required packages to your document preamble:
-\newpage
-\begin{adjustbox}{angle=90}
-%\begin{table}[]
-\begin{tabular}{cccccccccc}
-	Lipid/counter-ions                & force field  & Ion (M) & N$_{l}$ & N$_{w}$ & N$_{ion}$ & T (K) & t$_{sim}$ (ns) & t\_\{analysis\} (ns) & files \\ \hline
-POPC                              & CHARMM-Drude & NA      & NA       & NA       & NA         & NA    & NA              & NA                   & NA    \\ \hline
-	\multirow{4}{*}{POPC:NaCl}        & CHARMM-Drude & 0.350   & 144      & 6400     & 41         & 303   & 500             & 500                  & \cite{kav_batuhan_2020_4048180}   \\
-				  & CHARMM-Drude & 0.450   & 144      & 6400     & 51         & 303   & 500             & 500                  & \cite{kav_batuhan_2020_4048171}   \\
-				  & CHARMM-Drude & 0.650   & 144      & 6400     & 77         & 303   & 500             & 500                  & \cite{kav_batuhan_2020_4074903}   \\
-				  & CHARMM-Drude & 1.0     & 144      & 6400     & 115        & 303   & 500             & 500                  & \cite{kav_batuhan_2020_4074906}   \\ \hline
-	\multirow{3}{*}{POPC:CaCl$_{2}$} & CHARMM-Drude & 0.350   & 144      & 6400     & 41         & 303   & 500             & 500                  & \cite{kav_batuhan_2020_4048178}   \\
-				  & CHARMM-Drude & 0.450   & 144      & 6400     & 52         & 303   & 500             & 500                  & \cite{kav_batuhan_2020_4048172}   \\
-				  & CHARMM-Drude & 0.650   & 144      & 6400     & 76         & 303   & 500             & 500                  & \cite{kav_batuhan_2020_4048175}
-\end{tabular}
-%\end{table}
-\end{adjustbox}
-
-\section{Results and discussion}
-
 \subsection{Order Parameters}
 
-\begin{figure}
+\begin{figure}[!hbt]
 	\centering
-	\includegraphics{../orderParameters_no_salt.eps}
-	\caption{order parameters for the simulations without ions. Charmm36 data is copied from \tiny{$https://github.com/NMRLipids/MATCH/blob/master/Data/Lipid_Bilayers/POPC/T300K/MODEL_CHARMM36/OrdParsPOPC.dat$}}
+	\includegraphics{../drude_vs_c36_nacl.eps}
+	\caption{Order parameters calculated}
 \end{figure}
 \FloatBarrier
 \begin{figure}[!hbt]
 	\centering
-	\includegraphics{../drude_c36_op_change.eps}
-	\caption{change in the order parameters}
+	\includegraphics{../drude_vs_c36_cacl2.eps}
+	\caption{Order parameters}
 \end{figure}
 \FloatBarrier
-\subsection{Dihedral distributions}
-
-\begin{figure}[!hbt]
-	\centering
-	\includegraphics{../NaCl_dihedral_distributions.eps}
-	\caption{dihedral distributions}
-\end{figure}
-\FloatBarrier
-
-\begin{figure}[!hbt]
-	\centering
-	\includegraphics{../cacl2_dihedral_distributions.eps}
-	\caption{dihedral distributions}
-\end{figure}
-\FloatBarrier
-
-\subsection{Density profiles}
-
-\begin{figure}[!hbt]
-	\centering
-	\includegraphics{../na_number_density.eps}
-	\caption{Na$^{+}$ number density}
-\end{figure}
-\FloatBarrier
-\begin{figure}[!hbt]
-	\centering
-	\includegraphics{../ca_number_density.eps}
-	\caption{Ca$^{+2}$ number density}
-\end{figure}
-\FloatBarrier
-
-
 
 \subsection{References}
 
@@ -224,6 +163,6 @@ POPC                              & CHARMM-Drude & NA      & NA       & NA      
 %% Notice that the class file automatically sets \bibliographystyle
 %% and also names the section correctly.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\bibliography{nmrlipidsPOL.bib}
+%\bibliography{nmrlipidsPOL.bib}
 
 \end{document}
