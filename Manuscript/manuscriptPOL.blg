@@ -1,0 +1,70 @@
+This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: manuscriptPOL.aux
+The style file: achemso.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: acs-manuscriptPOL.bib
+Database file #2: nmrlipidsPOL.bib
+Warning--entry type for "kav_batuhan_2021_4738966" isn't style-file defined
+--line 1 of file nmrlipidsPOL.bib
+Warning--entry type for "kav_batuhan_2020_4683411" isn't style-file defined
+--line 11 of file nmrlipidsPOL.bib
+Warning--entry type for "kav_batuhan_2020_4683405" isn't style-file defined
+--line 21 of file nmrlipidsPOL.bib
+Warning--entry type for "kav_batuhan_2020_4683398" isn't style-file defined
+--line 31 of file nmrlipidsPOL.bib
+Warning--entry type for "kav_batuhan_2020_4683394" isn't style-file defined
+--line 41 of file nmrlipidsPOL.bib
+Warning--entry type for "kav_batuhan_2020_4683393" isn't style-file defined
+--line 51 of file nmrlipidsPOL.bib
+Warning--entry type for "kav_batuhan_2020_4683386" isn't style-file defined
+--line 61 of file nmrlipidsPOL.bib
+Warning--entry type for "kav_batuhan_2020_4683391" isn't style-file defined
+--line 71 of file nmrlipidsPOL.bib
+Warning--entry type for "kav_batuhan_2021_4665773" isn't style-file defined
+--line 81 of file nmrlipidsPOL.bib
+Warning--entry type for "kav_batuhan_2021_4604630" isn't style-file defined
+--line 91 of file nmrlipidsPOL.bib
+achemso 2019-02-14 v3.12a
+You've used 11 entries,
+            2538 wiz_defined-function locations,
+            791 strings with 8217 characters,
+and the built_in function-call counts, 1915 in all, are:
+= -- 169
+> -- 85
+< -- 14
++ -- 34
+- -- 23
+* -- 133
+:= -- 287
+add.period$ -- 20
+call.type$ -- 11
+change.case$ -- 4
+chr.to.int$ -- 2
+cite$ -- 11
+duplicate$ -- 105
+empty$ -- 143
+format.name$ -- 30
+if$ -- 381
+int.to.chr$ -- 0
+int.to.str$ -- 1
+missing$ -- 0
+newline$ -- 88
+num.names$ -- 30
+pop$ -- 21
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 1
+stack$ -- 0
+substring$ -- 6
+swap$ -- 59
+text.length$ -- 20
+text.prefix$ -- 0
+top$ -- 1
+type$ -- 74
+warning$ -- 0
+while$ -- 23
+width$ -- 0
+write$ -- 138
+(There were 10 warnings)

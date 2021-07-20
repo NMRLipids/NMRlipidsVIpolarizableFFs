@@ -1,0 +1,107 @@
+\providecommand{\latin}[1]{#1}
+\makeatletter
+\providecommand{\doi}
+  {\begingroup\let\do\@makeother\dospecials
+  \catcode`\{=1 \catcode`\}=2 \doi@aux}
+\providecommand{\doi@aux}[1]{\endgroup\texttt{#1}}
+\makeatother
+\providecommand*\mcitethebibliography{\thebibliography}
+\csname @ifundefined\endcsname{endmcitethebibliography}
+  {\let\endmcitethebibliography\endthebibliography}{}
+\begin{mcitethebibliography}{11}
+\providecommand*\natexlab[1]{#1}
+\providecommand*\mciteSetBstSublistMode[1]{}
+\providecommand*\mciteSetBstMaxWidthForm[2]{}
+\providecommand*\mciteBstWouldAddEndPuncttrue
+  {\def\EndOfBibitem{\unskip.}}
+\providecommand*\mciteBstWouldAddEndPunctfalse
+  {\let\EndOfBibitem\relax}
+\providecommand*\mciteSetBstMidEndSepPunct[3]{}
+\providecommand*\mciteSetBstSublistLabelBeginEnd[3]{}
+\providecommand*\EndOfBibitem{}
+\mciteSetBstSublistMode{f}
+\mciteSetBstMaxWidthForm{subitem}{(\alph{mcitesubitemcount})}
+\mciteSetBstSublistLabelBeginEnd
+  {\mcitemaxwidthsubitemform\space}
+  {\relax}
+  {\relax}
+
+\bibitem[Kav(2021)]{kav_batuhan_2021_4604630}
+Kav,~B. {Pure POPC membrane simulations with the CHARMM- Drude force field
+  (OpenMM 7.5.0)}. 2021; \url{https://doi.org/10.5281/zenodo.4604630}\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Kav(2021)]{kav_batuhan_2021_4665773}
+Kav,~B. {Pure POPE membrane simulations with the CHARMM- Drude force field
+  (OpenMM 7.5.0)}. 2021; \url{https://doi.org/10.5281/zenodo.4665773}\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Kav(2020)]{kav_batuhan_2020_4683386}
+Kav,~B. {Pure POPC Membrane with 350mM NaCl simulations using Drude Polarizable
+  Force Field and OpenMM}. 2020;
+  \url{https://doi.org/10.5281/zenodo.4683386}\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Kav(2020)]{kav_batuhan_2020_4683398}
+Kav,~B. {Pure POPC Membrane with 450mM NaCl simulations using Drude Polarizable
+  Force Field and OpenMM}. 2020;
+  \url{https://doi.org/10.5281/zenodo.4683398}\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Kav(2020)]{kav_batuhan_2020_4683405}
+Kav,~B. {Pure POPC Membrane with 650mM NaCl simulations using Drude Polarizable
+  Force Field and OpenMM}. 2020;
+  \url{https://doi.org/10.5281/zenodo.4683405}\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Kav(2020)]{kav_batuhan_2020_4683411}
+Kav,~B. {Pure POPC Membrane with 1000mM NaCl simulations using Drude
+  Polarizable Force Field and OpenMM}. 2020;
+  \url{https://doi.org/10.5281/zenodo.4683411}\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Kav(2020)]{kav_batuhan_2020_4683393}
+Kav,~B. {Pure POPC Membrane with 350mM CaCl2 simulations using Drude
+  Polarizable Force Field and OpenMM}. 2020;
+  \url{https://doi.org/10.5281/zenodo.4683393}\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Kav(2020)]{kav_batuhan_2020_4683391}
+Kav,~B. {Pure POPC Membrane with 450mM CaCl2 simulations using Drude
+  Polarizable Force Field and OpenMM}. 2020;
+  \url{https://doi.org/10.5281/zenodo.4683391}\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Kav(2020)]{kav_batuhan_2020_4683394}
+Kav,~B. {Pure POPC Membrane with 650mM CaCl2 simulations using Drude
+  Polarizable Force Field and OpenMM}. 2020;
+  \url{https://doi.org/10.5281/zenodo.4683394}\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Kav(2021)]{kav_batuhan_2021_4738966}
+Kav,~B. {Pure POPC membrane simulations with 1000 mM CaCl2 with the
+  CHARMM-Drude force field (OpenMM)}. 2021;
+  \url{https://doi.org/10.5281/zenodo.4738966}\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\end{mcitethebibliography}

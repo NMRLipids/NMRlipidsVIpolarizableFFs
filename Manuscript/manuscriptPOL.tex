@@ -53,28 +53,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \author{Batuhan Kav}
 \affiliation{Forschungszentrum Juelich, Germany}
-%\author{Fred T. Secondauthor}
-%\altaffiliation{Current address: Some other place, Othert\"own,
-%Germany}
-%\author{I. Ken Groupleader}
-%\altaffiliation{A shared footnote}
 \email{b.kav@fz-juelich.de}
-%\phone{+123 (0)123 4445556}
-%\fax{+123 (0)123 4445557}
-%\affiliation[Unknown University]
-%{Department of Chemistry, Unknown University, Unknown Town}
-%\alsoaffiliation[Second University]
-%{Department of Chemistry, Second University, Nearby Town}
-%\author{Susanne K. Laborator}
-%\email{s.k.laborator@bigpharma.co}
-%\affiliation[BigPharma]
-%{Lead Discovery, BigPharma, Big Town, USA}
-%\author{Kay T. Finally}
-%\affiliation[Unknown University]
-%{Department of Chemistry, Unknown University, Unknown Town}
-%\alsoaffiliation[Second University]
-%{Department of Chemistry, Second University, Nearby Town}
-
+\author{O. H. Samuli Ollila}
+\author{Markus S. Miettinen}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% The document title should be given as usual. Some journals require
 %% a running title from the author: this should be supplied as an
@@ -138,69 +119,69 @@ Dihedral distributions are calculated using the script "calcDihedral.py" under\\
 \begin{adjustbox}{angle=90}
 %\begin{table}[]
 \begin{tabular}{cccccccccc}
-	Lipid/counter-ions                & force field  & Ion (M) & N$_{l}$ & N$_{w}$ & N$_{ion}$ & T (K) & t$_{sim}$ (ns) & t\_\{analysis\} (ns) & files \\ \hline
-POPC                              & CHARMM-Drude & NA      & NA       & NA       & NA         & NA    & NA              & NA                   & NA    \\ \hline
-	\multirow{4}{*}{POPC:NaCl}        & CHARMM-Drude & 0.350   & 144      & 6400     & 41         & 303   & 500             & 500                  & \cite{kav_batuhan_2020_4048180}   \\
-				  & CHARMM-Drude & 0.450   & 144      & 6400     & 51         & 303   & 500             & 500                  & \cite{kav_batuhan_2020_4048171}   \\
-				  & CHARMM-Drude & 0.650   & 144      & 6400     & 77         & 303   & 500             & 500                  & \cite{kav_batuhan_2020_4074903}   \\
-				  & CHARMM-Drude & 1.0     & 144      & 6400     & 115        & 303   & 500             & 500                  & \cite{kav_batuhan_2020_4074906}   \\ \hline
-	\multirow{3}{*}{POPC:CaCl$_{2}$} & CHARMM-Drude & 0.350   & 144      & 6400     & 41         & 303   & 500             & 500                  & \cite{kav_batuhan_2020_4048178}   \\
-				  & CHARMM-Drude & 0.450   & 144      & 6400     & 52         & 303   & 500             & 500                  & \cite{kav_batuhan_2020_4048172}   \\
-				  & CHARMM-Drude & 0.650   & 144      & 6400     & 76         & 303   & 500             & 500                  & \cite{kav_batuhan_2020_4048175}
+	Lipid/counter-ions                & force field  & Ion (M) & N$_{l}$ & N$_{w}$ & N$_{ion}$ & T (K) & t$_{sim}$ (ns) & t$_{analysis}$ (ns) & files \\ \hline
+POPC                              & CHARMM-Drude & NA      & NA       & 6400       & 0         & 303    & 500              & 400         &          \cite{kav_batuhan_2021_4604630}    \\ \hline
+POPE                              & CHARMM-Drude & NA      & NA       & 6400       & 0         & 303    & 350              & 300         &          \cite{kav_batuhan_2021_4665773}    \\ \hline
+	\multirow{4}{*}{POPC:NaCl}        & CHARMM-Drude & 0.350   & 144      & 6400     & 41         & 303   & 500             & 400                  & \cite{kav_batuhan_2020_4683386}   \\
+				  & CHARMM-Drude & 0.450   & 144      & 6400     & 51         & 303   & 500             & 400                  & \cite{kav_batuhan_2020_4683398}   \\
+				  & CHARMM-Drude & 0.650   & 144      & 6400     & 77         & 303   & 500             & 400                  & \cite{kav_batuhan_2020_4683405}   \\
+				  & CHARMM-Drude & 1.0     & 144      & 6400     & 115        & 303   & 500             & 400                  & \cite{kav_batuhan_2020_4683411}   \\ \hline
+	\multirow{3}{*}{POPC:CaCl$_{2}$} & CHARMM-Drude & 0.350   & 144      & 6400     & 41         & 303   & 500             & 400                  & \cite{kav_batuhan_2020_4683393}   \\
+				  & CHARMM-Drude & 0.450   & 144      & 6400     & 52         & 303   & 500             & 400                  & \cite{kav_batuhan_2020_4683391}   \\
+				  & CHARMM-Drude & 0.650   & 144      & 6400     & 76         & 303   & 500             & 400                  & \cite{kav_batuhan_2020_4683394} \\
+				  & CHARMM-Drude & 1.0   & 144      & 6400     & 114         & 303   & 500             & 400                  & \cite{kav_batuhan_2021_4738966}
+				  
 \end{tabular}
 %\end{table}
 \end{adjustbox}
 
-\section{Results and discussion}
-
-\subsection{Order Parameters}
-
-\begin{figure}
-	\centering
-	\includegraphics{../orderParameters_no_salt.eps}
-	\caption{order parameters for the simulations without ions. Charmm36 data is copied from \tiny{$https://github.com/NMRLipids/MATCH/blob/master/Data/Lipid_Bilayers/POPC/T300K/MODEL_CHARMM36/OrdParsPOPC.dat$}}
-\end{figure}
-\FloatBarrier
-\begin{figure}[!hbt]
-	\centering
-	\includegraphics{../drude_c36_op_change.eps}
-	\caption{change in the order parameters}
-\end{figure}
-\FloatBarrier
-\subsection{Dihedral distributions}
+\section{Results}
 
 \begin{figure}[!hbt]
 	\centering
-	\includegraphics{../NaCl_dihedral_distributions.eps}
-	\caption{dihedral distributions}
+	\includegraphics{popc_order_parameters_for_all.png}
+	\caption{The head group and glycerol backbone order parameters $S_{CH}$ for the POPC simulations. The experimental values on the dashed lines mean that the different isomers 1/2 experimentally could not be resolved.}
+	\label{fig:popc_order}
 \end{figure}
-\FloatBarrier
 
 \begin{figure}[!hbt]
 	\centering
-	\includegraphics{../cacl2_dihedral_distributions.eps}
-	\caption{dihedral distributions}
+	\includegraphics{popc_order_parameters_nosalt.png}
+	\caption{The head group and glycerol backbone order parameters $S_{CH}$ for the POPC simulations without salt.}
+	\label{fig:popc_order_no_salt}
 \end{figure}
-\FloatBarrier
-
-\subsection{Density profiles}
 
 \begin{figure}[!hbt]
 	\centering
-	\includegraphics{../na_number_density.eps}
-	\caption{Na$^{+}$ number density}
+	\includegraphics{popc_order_parameter_change.png}
+	\caption{The change in the head group order parameters with respect to the simulations without salt as a function of the salt concentration.}
+	\label{fig:popc_order_parameter_change}
 \end{figure}
-\FloatBarrier
+
 \begin{figure}[!hbt]
 	\centering
-	\includegraphics{../ca_number_density.eps}
-	\caption{Ca$^{+2}$ number density}
+	\includegraphics{pope_order_parameters.png}
+	\caption{The head group and glycerol backbone order parameters $S_{CH}$ for the POPE simulations.}
+	\label{fig:pope_order}
 \end{figure}
-\FloatBarrier
+
+\begin{figure}[!hbt]
+	\centering
+	\includegraphics{dihedral_distributions_for_all.png}
+	\caption{The distributions of the torsion angles for the head group atoms}
+	\label{fig:dihedral}
+\end{figure}
+
+\begin{figure}[!hbt]
+	\centering
+	\includegraphics{dihedral_distributions_no_salt.png}
+	\caption{The distributions of the torsion angles for the head group atoms without the presence of salt.}
+	\label{fig:dihedral_no_salt}
+\end{figure}
 
 
 
-\subsection{References}
+\clearpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% The "Acknowledgement" section can be given in all manuscript
