@@ -1,1 +1,0 @@
-{'ID': 0, 'SOFTWARE': 'gromacs', 'FF': 'CHARMM36', 'FF_SOURCE': 'CHARMM-GUI', 'FF_DATE': '??', 'TRJ': [['dope.trr']], 'TPR': [['dope.tpr']]}
