@@ -1,0 +1,31 @@
+ID: 0
+DOI: 10.5281/zenodo.4665773
+MAPPING: POPE,mappingPOPEcharmm.txt
+SYSTEM: POPE:NoSalt_Drude
+SOFTWARE: OPENMM
+FF: Drude
+FF_SOURCE: CHARMM-GUI
+FF_DATE: ??
+TRJ:
+- - traj_combined.dcd
+TPR:
+- - step2_drude.psf
+PDB:
+- - step2_drude.pdb
+PREEQTIME: '0'
+POPE: POPE
+POT: M_K_M
+SOD: M_NA_M
+CLA: M_CL_M
+CAL: M_CA_M
+SOL: M_SOL_M
+NPOPE: '[72,72]'
+NPOT: '0'
+NSOD: '0'
+NCLA: '0'
+NCAL: '0'
+NSOL: '5040'
+TEMPERATURE: '303'
+TRJLENGTH: '300'
+MAPPING_DICT:
+  POPE: mappingPOPEcharmm.txt

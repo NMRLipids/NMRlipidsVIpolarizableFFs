@@ -1,1 +1,0 @@
-{'TPR': [['mdrun.tpr']], 'TRJ': [['traj_comp.xtc']], 'FF': 'CHARMM36', 'FF_DATE': '??', 'ID': 0, 'SOFTWARE': 'gromacs', 'FF_SOURCE': 'CHARMM-GUI'}

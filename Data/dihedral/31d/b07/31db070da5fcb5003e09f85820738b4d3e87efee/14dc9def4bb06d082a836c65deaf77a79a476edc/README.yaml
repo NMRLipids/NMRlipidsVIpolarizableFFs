@@ -1,0 +1,31 @@
+ID: 0
+DOI: 10.5281/zenodo.4683405
+MAPPING: POPC,mappingPOPCcharmm.txt
+SYSTEM: POPC:650mM_NaCl:Drude
+SOFTWARE: openmm
+FF: Drude
+FF_SOURCE: CHARMM-GUI
+FF_DATE: ??
+TRJ:
+- - wrapped.dcd
+TPR:
+- - step2_charmm2omm.psf
+PDB:
+- - step2_charmm2omm.pdb
+PREEQTIME: '0'
+POPC: POPC
+POT: M_K_M
+SOD: M_NA_M
+CLA: M_CL_M
+CAL: M_CA_M
+SOL: M_SOL_M
+NPOPC: '[64,64]'
+NPOT: '0'
+NSOD: '77'
+NCLA: '77'
+NCAL: '0'
+NSOL: '6400'
+TEMPERATURE: '303'
+TRJLENGTH: '500'
+MAPPING_DICT:
+  POPC: mappingPOPCcharmm.txt
