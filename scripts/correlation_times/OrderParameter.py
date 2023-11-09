@@ -130,7 +130,7 @@ def read_trajs_calc_OPs(ordPars, top, trajs):
         filenames of trajectories
     """
     # read-in topology and trajectory
-    mol = mda.Universe(top, trajs)
+    mol = mda.Universe(top, trajs, in_memory = False)
 
     # make atom selections for each OP and store it as its attribute for later use in trajectory
     for op in ordPars.values():
@@ -157,7 +157,7 @@ def read_trajs_calc_OPs(ordPars, top, trajs):
     for op in ordPars.values():
         op.traj=[0]*Nres		
     for frame in mol.trajectory:
-	
+        print(frame, end='\r')	
         for op in ordPars.values():
             for i in range(0,Nres):
                 residue=op.selection[i]	
