@@ -1,0 +1,5 @@
+concentration (mM),order_parameter,err_order_parameter
+0.0,0.0,0.0
+100.0,-0.0049000000000000024,-0.0
+350.0,-0.0154,-0.0
+1000.0,-0.0183,-0.0
