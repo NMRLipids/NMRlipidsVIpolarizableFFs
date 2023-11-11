@@ -1,6 +1,3 @@
-### for completeness, this is the corrtimes.py file for the databank port ###
-### i'll do my updates/changes on this file instead of the corrtimes.py ###
-
 import sys
 import numpy as np
 from scipy import optimize
@@ -38,8 +35,6 @@ def read_data(datafile):
 def calc_corrtime_noread(corrF, Stimes, OP):
     # flag for convergence
     conv = 0
-    # read in simulation data from gromacs g_rotacf
-    # corrF, Stimes=read_data(corrfile)
 
     # normalized correlation fuction
     NcorrF = (corrF - OP ** 2) / (1 - OP ** 2);
@@ -160,33 +155,28 @@ def calc_corrtime_withee(times, mean, std, OP, deltaOP):
 
 def calc_tau(nframes, trajectory, atom1, atom2):
 
-    
-    nframes_half = np.int(np.floor(nframes/2));
-
     norm_coor = np.zeros((nframes, 3))
     for i in range(0,nframes):
 
         norm_coor[i,:] = (trajectory[i][atom1] - trajectory[i][atom2]) / np.linalg.norm(trajectory[i][atom1] - trajectory[i][atom2])
 
-    #res = calc_tau_fast(nframes, atom1_coor, atom2_coor)
     res = calc_tau_faster(nframes, norm_coor)
-    #print(res)
     return res
 
 @jit(nopython=True)
 def calc_tau_fast(nframes,atom1_coor,atom2_coor):
 
     nframes_half = np.int(np.floor(nframes/2))
-    corr = np.zeros((nframes_half));
+    corr = np.zeros((nframes_half))
     for tau in range(0, nframes_half):
 
-        w = 0;
-        tmp = 0;
+        w = 0
+        tmp = 0
 
         for t in range(0, nframes - tau):
 
-            vec1 = (atom1_coor[t] - atom2_coor[t]) / np.linalg.norm(atom1_coor[t] - atom2_coor[t]);
-            vec2 = (atom1_coor[t + tau] - atom2_coor[t + tau]) / np.linalg.norm(atom1_coor[t + tau] - atom2_coor[t + tau]);
+            vec1 = (atom1_coor[t] - atom2_coor[t]) / np.linalg.norm(atom1_coor[t] - atom2_coor[t])
+            vec2 = (atom1_coor[t + tau] - atom2_coor[t + tau]) / np.linalg.norm(atom1_coor[t + tau] - atom2_coor[t + tau])
 
             theta = np.dot(vec1, vec2)
 
@@ -204,10 +194,7 @@ def calc_tau_faster(nframes, atom_coor):
 
     nframes_half = np.int(np.floor(nframes/2))
     corr = np.zeros((nframes_half))
-
-    #coor = (atom1_coor - atom2_coor) / np.linalg.norm(atom1_coor - atom2_coor, axis = 1)[:,None]
-
-
+    
     for tau in range(0, nframes_half):
 
         res = np.einsum('ij,ij->i', atom_coor[0:nframes-tau,:], atom_coor[tau:nframes,:])
