@@ -63,10 +63,10 @@ def calc_corrtime_noread(corrF, Stimes, OP):
     pos = np.argmax(NcorrF < 0);
 
     if pos > 0:
-        tau_eff_area = sum(NcorrF[0:pos]) * dt * 0.001 * 10 ** (-9);
+        tau_eff_area = sum(NcorrF[0:pos]) * dt * 0.001 * 10 ** (-9)
         conv = 1
     else:
-        tau_eff_area = sum(NcorrF) * dt * 0.001 * 10 ** (-9);
+        tau_eff_area = sum(NcorrF) * dt * 0.001 * 10 ** (-9)
         conv = 0
 
     # Constants for calculating R1
