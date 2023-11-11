@@ -1,38 +1,21 @@
 ### This is the main script to calculate the effective correlation times ###
-### originally developed by Hanne Antila, Samuli Ollila, Markus Miettinen, Hector ... ##
-### initial adaptation to the NMRLipids Databank by Batuhan Kav ###
+### originally developed by Hanne Antila ###
+### further improved by Batuhan Kav ###
 
-# intended use #
-
-#teff_calculator_databank(topology, trajectory, dt, lipid_type, residue_ids, op_list, write_directory, def_file, ID = 0)
-
-###############
-###############
-## IMPORTANT REMARKS ##
-# topology = topology file for MDAnalysis (psf, tpr, top, pdb, gro, ...)
-# trajectory = trajectory file for MDAnalysis
-# dt = saving frequency in ps
-# lipid_type = name of the lipid molecules, i.e. POPC. this is used later to save files with proper naming
-# residue_ids = zero-based list of the lipid_type
-# op_list = a numpy array that contains the label, atom1, atom2 for a given order parameter
-# ex: np.array(['beta','C32','H2A'])
-# write_directory = directory where the output will be written
-# def_file = Order parameter definition file
-# ID = simulation ID. could be removed in the future
 
 import MDAnalysis as mda
 from OrderParameter import *
 import warnings
 from corrtimesDatabank import *
 import time
+import argparse
 
 def teff_calculator_databank(topology, trajectory, dt, lipid_type, residue_ids, def_file, write_directory = './', ID = 0):
 
     print('Starting the effective correlation times')
-    start_time = time.time() # to get the performance now, could be removed
+    start_time = time.time() 
 
     u = mda.Universe(topology, trajectory, dt=dt, in_memory = False)
-   # u = mda.Universe(topology, trajectory, in_memory = True)
     nframes = u.trajectory.n_frames
     # note that we only calculate the correlations upto lag_time = n_frames/2
     # this is hardcoded now, could be changed in the future
@@ -45,16 +28,11 @@ def teff_calculator_databank(topology, trajectory, dt, lipid_type, residue_ids, 
     correlation_times = np.zeros((nframes_half, nlipids))
     
     # getting the time stamps for each frame
-    #HANNE: should dt be passed as input or read from the traj? 
     time_axis = np.array([i * u.trajectory.dt for i in range(0, nframes_half)])
     # calculating the order parameters for normalization #
     # Eq. 7 from https://pubs.acs.org/doi/pdf/10.1021/acs.jcim.0c01299 #
     print('Calculating order parameters')
     OrdParam = find_OP(def_file, topology, trajectory)
-
-
-
-
 
 
     outfile = open(write_directory + '/times_' + str(ID) + '_' + lipid_type + '_R1.txt', 'a')
@@ -101,20 +79,35 @@ def teff_calculator_databank(topology, trajectory, dt, lipid_type, residue_ids, 
 
 
     print('Finished with the effective correlation time analysis')
-    print('It took ' + str(time.time() - start_time) + ' seconds')
+    print(f'It took {(time.time() - start_time)/60} minutes')
     print('If you wish to publish these results, please cite https://dx.doi.org/10.1021/acs.jcim.0c01299')
-#    np.savetxt(write_directory + '/correlation_function.csv',correlation_times,delimiter=',')
-     #Hanne: this returns the correlation time functions for the last op only?		
+
     return correlation_times, OrdParam
 
-######## demonstration ########
-topology = './step2_drude.psf'
-trajectory = './wrapped_full_remove_first_5000frames.xtc'
-lipid_type = 'POPC'
-residue_ids = np.arange(128) + 1
-#op_list = np.array([['gamma', 'C15','H15C'],['beta1','C12','H12A'],['beta2','C12','H12B'],['alpha1','C11','H11A'],['alpha2','C11','H11B'],['g1_1','C3','HX'],['g1_2','C3', 'HY'],['g2', 'C2','HS'],['g3_1','C1','HA'],['g3_2','C1','HB']])
-def_file = "./Slipids_DOPC_reduced.def"
-write_directory = './'
-dt=10
-cor = teff_calculator_databank(topology, trajectory,dt, lipid_type, residue_ids, def_file, write_directory, ID = 0)
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description='Calculate effective correlation times as described in https://dx.doi.org/10.1021/acs.jcim.0c01299')
+
+    # Required string arguments
+    parser.add_argument('--topology', type=str, required=True, help='Path to the topology file, must be compatible with MDAnalysis file formats')
+    parser.add_argument('--trajectory', type=str, required=True, help='Path to the trajectory file, must be compatible with MDAnalysis file formats')
+    parser.add_argument('--lipid_type', type=str, required=True, help='Type of lipid as defind in the definition file')
+    parser.add_argument('--def_file', type=str, required=True, help='Path to the definition file that contains the atom and residue names for the order parameters')
+    parser.add_argument('--write_directory', type=str, required=True, help='Directory to write output files')
+    parser.add_argument('--number_of_lipid_residues', type = int, required = True, help = 'Number of lipid_type residues in the trajectory')
+
+    # Required float argument
+    parser.add_argument('--dt', type=float, required=True, help='Time step for the analysis')
+
+    args = parser.parse_args()
+
+    topology = args.topology
+    trajectory = args.trajectory
+    lipid_type = args.lipid_type
+    def_file = args.def_file
+    write_directory = args.write_directory
+    dt = args.dt
+    number_of_lipid_residues = args.number_of_lipid_residues
+    residue_ids = np.arange(number_of_lipid_residues) + 1 # we're keeping this variable for historical reasons. can be changed in the future
+
+    teff_calculator_databank(topology, trajectory,dt, lipid_type, residue_ids, def_file, write_directory, ID = 0)
 
